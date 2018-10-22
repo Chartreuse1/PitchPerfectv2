@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
 
-class RecordSoundViewController: UIViewController {
+class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
+    
+    let soundRecordingFileName = "recordedVoice.wav"
     
     @IBOutlet weak var RecordButton: UIButton!
     @IBOutlet weak var NotificationLabel: UILabel!
     @IBOutlet weak var StopButton: UIButton!
+    var audioRecorder : AVAudioRecorder!
     
     @IBAction func RecordButtonPressed(_ sender: Any) {
         configUI(bRecording: true)
+        recordSound()
     }
     @IBAction func StopButtonPressed(_ sender: Any) {
         configUI(bRecording: false)
+        audioRecorder.stop()
     }
     
     override func viewDidLoad() {
@@ -27,6 +33,26 @@ class RecordSoundViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         configUI(bRecording: false)
+    }
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        print("audioRecorderDidFinishRecording")
+    }
+    
+    func recordSound(){
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
+        let pathArray = [dirPath, soundRecordingFileName]
+        let filePath = URL(string: pathArray.joined(separator: "/"))
+        print("sound will be recorded to \(filePath!)")
+        
+        let session = AVAudioSession.sharedInstance()
+        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode:AVAudioSession.Mode.default)
+        
+        try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
+        audioRecorder.delegate = self
+        audioRecorder.isMeteringEnabled = true
+        audioRecorder.prepareToRecord()
+        audioRecorder.record()
     }
     
     func configUI(bRecording : Bool){
