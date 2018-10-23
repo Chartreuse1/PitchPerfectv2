@@ -62,11 +62,51 @@
                         <outlet property="NotificationLabel" destination="jMd-QN-5aB" id="HiR-0Y-JDz"/>
                         <outlet property="RecordButton" destination="EuO-Jl-LJq" id="asv-7M-z6L"/>
                         <outlet property="StopButton" destination="LeN-VW-m3T" id="hyn-2S-cnG"/>
+                        <segue destination="eED-gn-nKO" kind="show" identifier="TransitionToPlaySoundView" id="XrQ-uz-45m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="554" y="793"/>
+        </scene>
+        <!--Play Sound View Controller-->
+        <scene sceneID="3JZ-WS-GJZ">
+            <objects>
+                <viewController id="eED-gn-nKO" userLabel="Play Sound View Controller" customClass="PlaySoundsViewController" customModule="PitchPerfectv2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c13-m9-wOL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-kQ-Nng" userLabel="Stop Button">
+                                <rect key="frame" x="149" y="558" width="77" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="c8z-S6-WGd"/>
+                                    <constraint firstAttribute="width" constant="77" id="sOF-Ja-n2L"/>
+                                </constraints>
+                                <state key="normal" image="LowPitch"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv3-ON-e2c">
+                                <rect key="frame" x="19" y="87" width="336" height="421"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jVm-kQ-Nng" firstAttribute="centerX" secondItem="qcM-4u-0PH" secondAttribute="centerX" id="FZx-83-Q3k"/>
+                            <constraint firstItem="jVm-kQ-Nng" firstAttribute="bottom" secondItem="qcM-4u-0PH" secondAttribute="bottom" constant="-32" id="e42-PW-eBe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qcM-4u-0PH"/>
+                    </view>
+                    <connections>
+                        <outlet property="aLabel" destination="yv3-ON-e2c" id="N1U-Rk-0q9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xnJ-bD-c0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.5999999999999" y="794.75262368815595"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hkj-UE-jAC">
@@ -88,6 +128,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LowPitch" width="90" height="90"/>
         <image name="Record" width="155" height="155"/>
         <image name="Stop" width="155" height="155"/>
     </resources>

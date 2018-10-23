@@ -12,6 +12,7 @@
 		EA483FEA217E2A0F000B232F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA483FE8217E2A0F000B232F /* Main.storyboard */; };
 		EA483FEC217E2A10000B232F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA483FEB217E2A10000B232F /* Assets.xcassets */; };
 		EA483FEF217E2A10000B232F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA483FED217E2A10000B232F /* LaunchScreen.storyboard */; };
+		EAA3D198217E96FE00B975C8 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3D197217E96FE00B975C8 /* PlaySoundsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EA483FEB217E2A10000B232F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA483FEE217E2A10000B232F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA483FF0217E2A10000B232F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAA3D197217E96FE00B975C8 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				EA483FE4217E2A0F000B232F /* AppDelegate.swift */,
 				EA483FE6217E2A0F000B232F /* RecordSoundViewController.swift */,
+				EAA3D197217E96FE00B975C8 /* PlaySoundsViewController.swift */,
 				EA483FE8217E2A0F000B232F /* Main.storyboard */,
 				EA483FEB217E2A10000B232F /* Assets.xcassets */,
 				EA483FED217E2A10000B232F /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA483FE7217E2A0F000B232F /* RecordSoundViewController.swift in Sources */,
+				EAA3D198217E96FE00B975C8 /* PlaySoundsViewController.swift in Sources */,
 				EA483FE5217E2A0F000B232F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

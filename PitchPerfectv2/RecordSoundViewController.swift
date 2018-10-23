@@ -35,8 +35,17 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         configUI(bRecording: false)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier! == "TransitionToPlaySoundView") {
+            let destinationViewController = segue.destination as! PlaySoundsViewController
+            let theURL = sender as! URL
+            destinationViewController.theURL = theURL;
+        }
+    }
+    
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         print("audioRecorderDidFinishRecording")
+        performSegue(withIdentifier: "TransitionToPlaySoundView", sender : audioRecorder.url)
     }
     
     func recordSound(){
