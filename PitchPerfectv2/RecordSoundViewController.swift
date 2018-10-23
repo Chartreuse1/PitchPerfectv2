@@ -42,17 +42,17 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
             destinationViewController.recordedAudioURL = theURL;
         }
     }
-    
+
+    //once audio recording is finished, app will transition to the play sound screen
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        print("audioRecorderDidFinishRecording")
         performSegue(withIdentifier: "TransitionToPlaySoundView", sender : audioRecorder.url)
     }
     
+    //use AVFoundation objects like AVAudioSession and AVAudioRecorder to record sound
     func recordSound(){
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let pathArray = [dirPath, soundRecordingFileName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
-        print("sound will be recorded to \(filePath!)")
         
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSession.Category.playAndRecord, mode:AVAudioSession.Mode.default)
@@ -64,6 +64,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
+    //UI elements states need to be updated together
     func configUI(bRecording : Bool){
         if (bRecording) {
             RecordButton.isEnabled = false
