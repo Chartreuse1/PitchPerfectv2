@@ -13,9 +13,9 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     
     let soundRecordingFileName = "recordedVoice.wav"
     
-    @IBOutlet weak var RecordButton: UIButton!
-    @IBOutlet weak var NotificationLabel: UILabel!
-    @IBOutlet weak var StopButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet weak var stopButton: UIButton!
     var audioRecorder : AVAudioRecorder!
     
     @IBAction func RecordButtonPressed(_ sender: Any) {
@@ -67,14 +67,14 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     //UI elements states need to be updated together
     func configUI(bRecording : Bool){
         if (bRecording) {
-            RecordButton.isEnabled = false
-            StopButton.isEnabled = true
-            NotificationLabel.text = "Tap Button Below to Stop Recording"
+            recordButton.isEnabled = false
+            stopButton.isEnabled = true
+            notificationLabel.text = "Tap Button Below to Stop Recording"
         }
         else {
-            RecordButton.isEnabled = true
-            StopButton.isEnabled = false
-            NotificationLabel.text = "Tap Button Above to Record Sound"
+            recordButton.isEnabled = true
+            stopButton.isEnabled = false
+            notificationLabel.text = "Tap Button Above to Record Sound"
         }
     }
 }
