@@ -11,7 +11,6 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
 
-    var theURL : URL?
     var recordedAudioURL:URL!
     var audioFile:AVAudioFile!
     var audioEngine:AVAudioEngine!
@@ -25,19 +24,48 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var echoButton: UIButton!
     @IBOutlet weak var reverbButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+
     
     @IBAction func stopButtonPressed(_ sender: Any) {
+        stopAudio()
     }
     @IBAction func playSoundForButton(_ sender: Any) {
+        configureUI(.playing)
+        let btn = sender as! UIButton
+        switch (btn.tag) {
+        case 0:
+            print("snail button pressed")
+            playSound(rate:0.5)
+        case 1:
+            print("rabbit button pressed")
+            playSound(rate:2.0)
+        case 2:
+            print("chipmunk button pressed")
+            playSound(pitch:1000.0)
+        case 3:
+            print("vader button pressed")
+            playSound(pitch:-1000.0)
+        case 4:
+            print("echo button pressed")
+            playSound(echo:true)
+        case 5:
+            print("reverb button pressed")
+            playSound(reverb:true)
+        default:
+            print("unknown button pressed")
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupAudio()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        configureUI(.notPlaying)
+        stopButton.isEnabled = false
     }
     
     /*

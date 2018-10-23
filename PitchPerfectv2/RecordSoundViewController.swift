@@ -39,7 +39,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         if (segue.identifier! == "TransitionToPlaySoundView") {
             let destinationViewController = segue.destination as! PlaySoundsViewController
             let theURL = sender as! URL
-            destinationViewController.theURL = theURL;
+            destinationViewController.recordedAudioURL = theURL;
         }
     }
     
