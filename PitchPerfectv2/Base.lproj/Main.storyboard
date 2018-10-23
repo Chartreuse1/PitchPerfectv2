@@ -85,13 +85,6 @@
                                 </constraints>
                                 <state key="normal" image="LowPitch"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv3-ON-e2c">
-                                <rect key="frame" x="19" y="87" width="336" height="421"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -100,9 +93,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qcM-4u-0PH"/>
                     </view>
-                    <connections>
-                        <outlet property="aLabel" destination="yv3-ON-e2c" id="N1U-Rk-0q9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnJ-bD-c0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

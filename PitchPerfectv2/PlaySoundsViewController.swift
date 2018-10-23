@@ -12,7 +12,7 @@ class PlaySoundsViewController: UIViewController {
 
     var theURL : URL?
     
-    @IBOutlet weak var aLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +20,6 @@ class PlaySoundsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        aLabel.text = theURL?.absoluteString
     }
     /*
     // MARK: - Navigation
